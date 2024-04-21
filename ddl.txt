@@ -1,0 +1,40 @@
+CREATE TABLE sciekin (
+id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+creation_date timestamp NOT NULL DEFAULT current_timestamp(),
+odczyn float DEFAULT NULL,
+siarczany float DEFAULT NULL,
+chlorki float DEFAULT NULL,
+olow float DEFAULT NULL,
+chrom float DEFAULT NULL,
+cynk float DEFAULT NULL,
+kadm float DEFAULT NULL,
+miedz float DEFAULT NULL,
+nikiel float DEFAULT NULL,
+user_id int,
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE sciekio (
+id int(11) NOT NULL AUTO_INCREMENT,
+creation_date timestamp NOT NULL DEFAULT current_timestamp(),
+odczyn float DEFAULT NULL,
+siarczany float DEFAULT NULL,
+chlorki float DEFAULT NULL,
+olow float DEFAULT NULL,
+chrom float DEFAULT NULL,
+cynk float DEFAULT NULL,
+kadm float DEFAULT NULL,
+miedz float DEFAULT NULL,
+nikiel float DEFAULT NULL,
+user_id int(11) DEFAULT NULL,
+PRIMARY KEY (id),
+KEY user_id (user_id),
+CONSTRAINT sciekio_ibfk_1 FOREIGN KEY (user_id) REFERENCES users (id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
+
+CREATE TABLE users (
+id int AUTO_INCREMENT PRIMARY KEY,
+username varchar(50) NOT NULL,
+password varchar(255) NOT NULL,
+created_at datetime DEFAULT current_timestamp
+);
