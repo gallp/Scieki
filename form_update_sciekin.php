@@ -13,7 +13,7 @@ require_once "config.php";
 
 $rowid = $_GET["a"];
 
-$sql = "SELECT * FROM sciekio WHERE id = ?";
+$sql = "SELECT * FROM sciekin WHERE id = ?";
 $stmt = $link->prepare($sql);
 $stmt->bind_param("i",$rowid);
 $stmt->execute();
@@ -25,7 +25,7 @@ $result = $stmt->get_result()->fetch_assoc();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Scieki nieoczyszczone</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -50,9 +50,9 @@ $result = $stmt->get_result()->fetch_assoc();
 </header>
 
 
-    <h1 class="my-5">Scieki oczyszczone/Edycja/rekord <?php echo $rowid ?> </h1>
+    <h1>Scieki nieoczyszczone/Edycja/rekord <?php echo $rowid ?> </h1>
     
-        <form class="form-basic" action="model_update_sciekio.php" method="POST">
+        <form class="form-basic" action="model_update_sciekin.php" method="POST">
             <label for="Chlorki">Chlorki:</label>
             <input type="text" id="Chlorki" name="Chlorki" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["chlorki"]?>'>
             <label for="Chrom">Chrom:</label>
@@ -77,7 +77,7 @@ $result = $stmt->get_result()->fetch_assoc();
         <br>
         <section>
             <input type="submit" class="btn btn-send" value="Zapisz">
-            <a href="sciekio.php" class="btn btn-error">Anuluj</a>
+            <a href="sciekin.php" class="btn btn-error">Anuluj</a>
         </section>
         
     </form>

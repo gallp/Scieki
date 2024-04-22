@@ -13,7 +13,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ścieki oczyszczone</title>
+    <title>Ścieki nieoczyszczone</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -41,10 +41,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <b>Ścieki nieoczyszczone</b> 
 
 <br><br><br>
-<a href="sciekio.php" class="btn btn-send">Nowy wpis</a>
+<a href="form_insert_sciekin.php" class="btn btn-send">Nowy wpis</a>
 <br><br><br>
 <div>
-    <?php include 'display_sciekio.php'; ?>
+    <?php include 'display_sciekin.php'; ?>
 </div>
 </body>
 </html>

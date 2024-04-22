@@ -158,3 +158,8 @@ text-decoration: none;
 .btn-warning:hover {
     background-color: rgba(255, 166, 0, 0.801);
 }
+
+.form-basic > input,.form-basic > label{
+display: block;
+}
+

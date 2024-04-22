@@ -12,8 +12,7 @@
 // Include config file
 require_once "config.php";
 
-
-$sql = "SELECT * FROM v_sciekio ORDER BY creation_date DESC";
+$sql = "SELECT * FROM v_sciekin ORDER BY creation_date DESC";
 $result = $link->query($sql);
 
 //echo var_dump($result);
@@ -38,7 +37,7 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["olow"] . "</td>";
         echo "<td>" . $row["siarczany"] . "</td>";
         echo "<td>" . $row["username"] . "</td>";
-        echo '<td><a href="form_update_sciekio.php?a=' . $row['id'] . '">Edytuj</a> <a href="delete_sciekio.php?a=' . $row['id'] . '">Usuń</a></td>';
+        echo '<td><a href="form_update_sciekin.php?a=' . $row['id'] . '">Edytuj</a> <a href="delete_sciekin.php?a=' . $row['id'] . '">Usuń</a></td>';
         echo "</tr>";
     }
     echo "</table>";

@@ -41,42 +41,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <b>Ścieki oczyszczone</b> 
 
 <br><br><br>      
-    
-<div class="wrapper-form">
-    <form action="insert_sciekio.php" method="POST">
-        <div class="input-group-grid">
-            <label for="Chlorki">Chlorki:</label>
-            <input type="text" id="Chlorki" name="Chlorki" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-            <label for="Chrom">Chrom:</label>
-            <input type="text" id="Chrom" name="Chrom" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-            <label for="Cynk">Cynk:</label>
-            <input type="text" id="Cynk" name="Cynk" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-        </div>
-        <div class="input-group-grid">
-            <label for="Kadm">Kadm:</label>
-            <input type="text" id="Kadm" name="Kadm" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-            <label for="Miedz">Miedź:</label>
-            <input type="text" id="Miedz" name="Miedz" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-            <label for="Nikiel">Nikiel:</label>
-            <input type="text" id="Nikiel" name="Nikiel" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-        </div>
-        <div class="input-group-grid">
-            <label for="Odczyn">Odczyn:</label>
-            <input type="text" id="Odczyn" name="Odczyn" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-            <label for="Olow">Olów:</label>
-            <input type="text" id="Olow" name="Olow" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-            <label for="Siarczany">Siarczany:</label>
-            <input type="text" id="Siarczany" name="Siarczany" pattern="([\d]{1,3})(\.)([\d]{1,3})">
-        </div>       
-        <br>
-        <input type="submit" class="btn btn-send" value="Nowy wpis"><br><br><br>
-    </form>
-</div>
+<a href="form_insert_sciekio.php" class="btn btn-send">Nowy wpis</a>
+<br><br><br>
     
 <div>
-    <?php include 'display_sciekio.php'; ?>
+    <?php include 'display_sciekio.php';?>
 </div>
 
-    
 </body>
 </html>

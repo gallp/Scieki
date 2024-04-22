@@ -55,3 +55,20 @@ sciekio.siarczany,
 users.username
 FROM sciekio
 INNER JOIN users ON sciekio.user_id=users.id;
+
+CREATE VIEW v_sciekin (id,creation_date,chlorki,chrom,cynk,kadm,miedz,nikiel,odczyn,olow,siarczany,username) AS 
+SELECT 
+sciekin.id,
+sciekin.creation_date,
+sciekin.chlorki,
+sciekin.chrom,
+sciekin.cynk,
+sciekin.kadm,
+sciekin.miedz,
+sciekin.nikiel,
+sciekin.odczyn,
+sciekin.olow,
+sciekin.siarczany,
+users.username
+FROM sciekin
+INNER JOIN users ON sciekin.user_id=users.id;
