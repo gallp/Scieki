@@ -3,20 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Styl dla wyśrodkowanej tabeli */
 
-        /* Styl dla wyśrodkowanego tekstu w komórkach */
-       
-        /* Stylowanie naprzemiennych wierszy */
-        tr:nth-child(even) {
-            background-color: #f2f2f2; /* Kolor szary */
-        }
-        tr:nth-child(odd) {
-            background-color: #ffffff; /* Kolor biały */
-        }
-        
-    </style>
 </head>
 <body>
 
@@ -36,7 +23,7 @@ $username = $_SESSION["username"];
 if ($result->num_rows > 0) {
     // Wyświetlenie danych
     echo "<table class='table-sciekio'>";
-    echo "<tr><th allign='center'>ID</th><th>Data utworzenia</th><th>Chlorki</th><th>Chrom</th><th>Cynk</th><th>Kadm</th><th>Miedź</th><th>Nikiel</th><th>Odczyn</th><th>Ołów</th><th>Siarczany</th><th>Autor</th><th>Edycja</th></tr>";
+    echo "<tr><th>ID</th><th>Data utworzenia</th><th>Chlorki</th><th>Chrom</th><th>Cynk</th><th>Kadm</th><th>Miedź</th><th>Nikiel</th><th>Odczyn</th><th>Ołów</th><th>Siarczany</th><th>Autor</th><th>Edycja</th></tr>";
     while($row = $result->fetch_assoc()) {
         echo "\r\n<tr>";
         echo "<td>" . $row["id"] . "</td>";

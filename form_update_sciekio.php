@@ -56,27 +56,27 @@ $result = $stmt->get_result()->fetch_assoc();
     <form action="model_update_sciekio.php" method="POST">
         <div class="input-group-grid">
             <label for="Chlorki">Chlorki:</label>
-            <input type="text" id="Chlorki" name="Chlorki" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["chlorki"]?>'>
+            <input type="text" id="Chlorki" name="Chlorki" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["chlorki"]?>'>
             <label for="Chrom">Chrom:</label>
-            <input type="text" id="Chrom" name="Chrom" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["chrom"]?>'>
+            <input type="text" id="Chrom" name="Chrom" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["chrom"]?>'>
             <label for="Cynk">Cynk:</label>
-            <input type="text" id="Cynk" name="Cynk" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["cynk"]?>'>
+            <input type="text" id="Cynk" name="Cynk" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["cynk"]?>'>
         </div>
         <div class="input-group-grid">
             <label for="Kadm">Kadm:</label>
-            <input type="text" id="Kadm" name="Kadm" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["kadm"]?>'>
+            <input type="text" id="Kadm" name="Kadm" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["kadm"]?>'>
             <label for="Miedz">Miedź:</label>
-            <input type="text" id="Miedz" name="Miedz" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["miedz"]?>'>
+            <input type="text" id="Miedz" name="Miedz" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["miedz"]?>'>
             <label for="Nikiel">Nikiel:</label>
-            <input type="text" id="Nikiel" name="Nikiel" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["nikiel"]?>'>
+            <input type="text" id="Nikiel" name="Nikiel" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["nikiel"]?>'>
         </div>
         <div class="input-group-grid">
             <label for="Odczyn">Odczyn:</label>
-            <input type="text" id="Odczyn" name="Odczyn" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["odczyn"]?>'>
+            <input type="text" id="Odczyn" name="Odczyn" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["odczyn"]?>'>
             <label for="Olow">Olów:</label>
-            <input type="text" id="Olow" name="Olow" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["olow"]?>'>
+            <input type="text" id="Olow" name="Olow" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["olow"]?>'>
             <label for="Siarczany">Siarczany:</label>
-            <input type="text" id="Siarczany" name="Siarczany" pattern="(\d{1,3})(\.)([\d]{1,3})" value='<?php echo $result["siarczany"]?>'>
+            <input type="text" id="Siarczany" name="Siarczany" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["siarczany"]?>'>
         </div>
             <input type="hidden" id="id" name="id" value='<?php echo $rowid?>'>
         </div>
@@ -86,13 +86,14 @@ $result = $stmt->get_result()->fetch_assoc();
         <a href="sciekio.php" class="btn btn-error">Anuluj</a>
     </form>
 </div>
+<!--
 <div>
-    <?php echo var_dump($_GET);?>
+    /*<?php echo var_dump($_GET);?>
 <br>
     <?php echo var_dump($stmt);?>
 <br>
     <?php print_r($result);?>
 </div>
-
+-->
 </body>
 </html>

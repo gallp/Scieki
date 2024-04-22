@@ -29,8 +29,8 @@ nikiel float DEFAULT NULL,
 user_id int(11) DEFAULT NULL,
 PRIMARY KEY (id),
 KEY user_id (user_id),
-CONSTRAINT sciekio_ibfk_1 FOREIGN KEY (user_id) REFERENCES users (id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
+FOREIGN KEY (user_id) REFERENCES users (id)
+);
 
 CREATE TABLE users (
 id int AUTO_INCREMENT PRIMARY KEY,
@@ -38,3 +38,20 @@ username varchar(50) NOT NULL,
 password varchar(255) NOT NULL,
 created_at datetime DEFAULT current_timestamp
 );
+
+CREATE VIEW v_sciekio (id,creation_date,chlorki,chrom,cynk,kadm,miedz,nikiel,odczyn,olow,siarczany,username) AS 
+SELECT 
+sciekio.id,
+sciekio.creation_date,
+sciekio.chlorki,
+sciekio.chrom,
+sciekio.cynk,
+sciekio.kadm,
+sciekio.miedz,
+sciekio.nikiel,
+sciekio.odczyn,
+sciekio.olow,
+sciekio.siarczany,
+users.username
+FROM sciekio
+INNER JOIN users ON sciekio.user_id=users.id;

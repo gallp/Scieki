@@ -1,25 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Styl dla wyśrodkowanej tabeli */
-
-        /* Styl dla wyśrodkowanego tekstu w komórkach */
-       
-        /* Stylowanie naprzemiennych wierszy */
-        tr:nth-child(even) {
-            background-color: #f2f2f2; /* Kolor szary */
-        }
-        tr:nth-child(odd) {
-            background-color: #ffffff; /* Kolor biały */
-        }
-        
-    </style>
-</head>
-<body>
-
 <?php
 
 // Include config file

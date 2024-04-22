@@ -21,19 +21,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <header>
     <section class="first-header-section">
     </section>
-    
+    <div id="sexy-flexy">
     <section class="second-header-section">
-            <ul>
-                <li><a href="sciekin.php" class="btn btn-warning">Ścieki nieoczyszczone</a></li>
-                <li><a href="sciekio.php" class="btn btn-warning">Ścieki oczyszczone</a></li>
-            </ul> 
-        </section>
-
-        <section class="third-header-section">
-            <a href="reset-password.php" class="btn btn-warning">Zmień hasło</a>
-            <a href="logout.php" class="btn btn-error">Wyloguj</a>
-        </section>
-
+        <ul>
+            <li><a href="sciekin.php" class="btn btn-warning">Ścieki nieoczyszczone</a></li>
+            <li><a href="sciekio.php" class="btn btn-warning">Ścieki oczyszczone</a></li>
+        </ul> 
+    </section>
+    
+    <section class="third-header-section">
+        <a href="reset-password.php" class="btn btn-warning">Zmień hasło</a>
+        <a href="logout.php" class="btn btn-error">Wyloguj</a>
+    </section>
+    </div>
+    
+    
+    
 </header>
 
 <br>
