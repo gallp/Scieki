@@ -1,17 +1,13 @@
-body { 
-    width: 1200px;
-    min-width: 600px;
-    margin: auto;
-    font: 20px sans-serif; 
-    /*border: solid;
-    background-color: #ffffff;}*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    font-family: "Poppins", sans-serif;
 }
 
-header{
+.header-main{
     
     display: flex;
     justify-content: flex-end;
-    background-color: rgb(0, 0, 0);
+    /*background-color: rgb(0, 0, 0);*/
     /*border: #f70202;*/
     /*border-style: solid;*/
     /*padding:0px;*/
@@ -26,9 +22,7 @@ header{
 
 }
 
-
 .second-header-section ul{
-    
     list-style: none;
     display: flex;
     align-items: center;
@@ -37,11 +31,12 @@ header{
     padding-right: 1rem;
 }
 
-
 .second-header-section ul li a{
     text-decoration: none;
     color: black;
 }
+
+
 
 .third-header-section{
     display: flex;
@@ -58,13 +53,73 @@ header{
 }
 
 
+.body-middle{
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #526a75;
+    padding: 0 20px;
 
-input{
-    border-radius: 5px;
-    border: 1px;
-    border-style:solid;
- }
- input:invalid {
+}
+
+.container{
+    position: relative;
+    background:#ffffff;
+    max-width: 700px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgb(0, 0, 0.1);
+}
+
+.container header{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+}
+
+.container .form-basic{
+    margin-top: 20px;
+    /*border: 1px #999 dotted;*/
+    padding: 0 15px;
+
+}
+.input-box-group{
+    display: flex;
+    gap: 3rem;
+    /*border: 1px #333 dotted;*/
+    margin-top: 20px;
+}
+.form-basic .input-box{
+    width: 100%;
+    /*margin-top: 20px;*/
+    /*border:1px #333 dotted;*/
+}
+
+.form-basic textarea{
+    width: 100%;
+    height: 70px;
+    border: 1px #ddd solid;
+    border-radius: 6px;
+    outline: none;
+    resize: none;
+
+}
+
+.input-box input{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 1.8rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:invalid {
     background-color: ivory;
     border: none;
     outline: 2px solid red;
@@ -73,22 +128,9 @@ input{
 
 .input-group {
     display: flex;
-    gap: 20px; /* Odstęp między polami input */
-    padding: 10px;
-    /*left: 360px;*/
-    margin: auto;
-    width: 50%;
+    gap: 1rem; /* Odstęp między polami input */
+   
 }
-
-.input-group-grid {
-    display: grid;
-    margin: auto;
-    grid-template: 30px / 70px auto 70px auto 70px auto;
-    grid-gap: 10px;
-    padding: 10px;
-    
-}
-
 
 .table-sciekio{
     border-collapse: collapse;
@@ -125,28 +167,33 @@ padding: 5px 5px;
 border-radius: 5px;
 color: black;
 text-decoration: none;
+text-align: center;
+font-size: 20px;
+
 }
 
 
 .btn:hover{
     color: white;
+    box-shadow: 0 0 5px rgb(0, 0, 0.1);
+    transform: scale(105%);
+    transform: rotate(360deg);
+    transition: 0.5s ease-in;
 }
 
 .btn-send{
     background-color: rgb(2, 138, 74);
     border-style: none;
-    font-size: 20px;
 } 
 
 .btn-send:hover{
     background-color: rgba(0, 107, 14, 0.801);
-    border-style: none;
-    font-size: 20px;
 } 
 
 .btn-error{
     background-color: red;
 }
+
 .btn-error:hover{
     background-color: rgba(255, 0, 0, 0.801);
 }
@@ -158,8 +205,3 @@ text-decoration: none;
 .btn-warning:hover {
     background-color: rgba(255, 166, 0, 0.801);
 }
-
-.form-basic > input,.form-basic > label{
-display: block;
-}
-
