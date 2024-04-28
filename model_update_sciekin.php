@@ -22,15 +22,17 @@ $nikel = empty($_POST['Nikiel'])? NULL: htmlspecialchars($_POST['Nikiel']);
 $odczyn = empty($_POST['Odczyn'])? NULL: htmlspecialchars($_POST['Odczyn']);
 $olow = empty($_POST['Olow'])? NULL: htmlspecialchars($_POST['Olow']);
 $siarczany = empty($_POST['Siarczany'])? NULL: htmlspecialchars($_POST['Siarczany']);
+$komentarz = empty($_POST['Komentarz'])? NULL: htmlspecialchars($_POST['Komentarz']);
+
 $id = $_POST['id'];
 
-$sql = "UPDATE sciekin SET chlorki=?, chrom=?, cynk=?, kadm=?, miedz=?, nikiel=?, odczyn=?, olow=?, siarczany=? WHERE id=?";
+$sql = "UPDATE sciekin SET chlorki=?, chrom=?, cynk=?, kadm=?, miedz=?, nikiel=?, odczyn=?, olow=?, siarczany=?, komentarz=? WHERE id=?";
 
 $stmt = $link->prepare($sql);
-$stmt->bind_param("dddddddddi",$chlorki, $chrom, $cynk, $kadm, $miedz, $nikel, $odczyn, $olow, $siarczany, $id);
+$stmt->bind_param("dddddddddsi",$chlorki, $chrom, $cynk, $kadm, $miedz, $nikel, $odczyn, $olow, $siarczany, $komentarz, $id);
 $stmt->execute();
 
-echo "New records created successfully";
+echo "record updated successfully";
 
 $stmt->close();
 $link->close();

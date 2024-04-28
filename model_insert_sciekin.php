@@ -35,11 +35,11 @@ $row = $result->fetch_assoc();
 // Wydobycie wartości ID
 $id = $row['id'];
 
-$sql = "INSERT INTO sciekin (chlorki, chrom, cynk, kadm, miedz, nikiel, odczyn, olow, siarczany, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO sciekin (chlorki, chrom, cynk, kadm, miedz, nikiel, odczyn, olow, siarczany, komentarz, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $link->prepare($sql);
 
-$stmt->bind_param("dddddddddi", $chlorki, $chrom, $cynk, $kadm, $miedz, $nikel, $odczyn, $olow, $siarczany, $id);
+$stmt->bind_param("dddddddddsi", $chlorki, $chrom, $cynk, $kadm, $miedz, $nikel, $odczyn, $olow, $siarczany, $komentarz, $id);
 
 $chlorki = empty($_POST['Chlorki'])? NULL: $_POST['Chlorki'];
 $chrom = empty($_POST['Chrom'])? NULL: $_POST['Chrom'];
@@ -50,6 +50,7 @@ $nikel = empty($_POST['Nikiel'])? NULL: $_POST['Nikiel'];
 $odczyn = empty($_POST['Odczyn'])? NULL: $_POST['Odczyn'];
 $olow = empty($_POST['Olow'])? NULL: $_POST['Olow'];
 $siarczany = empty($_POST['Siarczany'])? NULL: $_POST['Siarczany'];
+$komentarz = empty($_POST['Komentarz'])? NULL: $_POST['Komentarz'];
 
 $stmt->execute();
 

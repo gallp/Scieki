@@ -18,6 +18,7 @@ require_once "config.php";
     $stmt->bind_param("i",$rowid);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
+    
 
     $sqlprev = "SELECT * FROM sciekin WHERE id < ? ORDER BY creation_date DESC LIMIT 1";
     $stmtprev = $link->prepare($sqlprev);
@@ -123,7 +124,8 @@ require_once "config.php";
                 <div class="input-box-group">
                     <div class="input-box">
                         <label for="Komentarz">Komentarz:</label>
-                        <textarea id="Komentarz" name="Komentarz"></textarea>
+                        
+                        <textarea id="Komentarz" name="Komentarz"><?php echo $result["komentarz"]?></textarea>
                     </div>
                     </div>
                         <input type="hidden" id="id" name="id" value='<?php echo $rowid?>'>
