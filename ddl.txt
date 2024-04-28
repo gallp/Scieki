@@ -72,3 +72,5 @@ sciekin.siarczany,
 users.username
 FROM sciekin
 INNER JOIN users ON sciekin.user_id=users.id;
+
+ALTER TABLE sciekin ADD COLUMN komentarz VARCHAR(1024) DEFAULT NULL AFTER nikiel;
