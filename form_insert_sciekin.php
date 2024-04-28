@@ -36,7 +36,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </header>
 
 <section class="body-middle">
-     
     <section class="container">
         <header>Scieki nieoczyszczone\Nowy wpis</header>
         <form class="form-basic" action="model_insert_sciekin.php" method="POST">
@@ -94,7 +93,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     <a href="sciekin.php" class="btn btn-error">Anuluj</a>
                 </div>
             </div>
-    </form>
- </div>
+        </form>
+    </section>
+</section>
 </body>
 </html>
