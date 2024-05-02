@@ -10,8 +10,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 // Include config file
 require_once "config.php";
-//error_reporting(E_ERROR | E_PARSE);
-    $rowid = $_GET["a"];
+require_once "functions.php";
+
+$rowid = $_GET["a"];
 
     $sql = "SELECT * FROM sciekin WHERE id = ?";
     $stmt = $link->prepare($sql);
@@ -19,7 +20,6 @@ require_once "config.php";
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
     
-
     $sqlprev = "SELECT * FROM sciekin WHERE id < ? ORDER BY creation_date DESC LIMIT 1";
     $stmtprev = $link->prepare($sqlprev);
     $stmtprev->bind_param("i",$rowid);
@@ -132,11 +132,14 @@ require_once "config.php";
                     </div>
                 </div>
                 <div class="input-box-group">  
-                    <div class="input-group">         
-                        <input type="submit" class="btn btn-send" value="Zapisz">
+                    <div class="input-group">
+                        <?php
+                        if($_SESSION["type"]=="admin"){
+                            echo '<input type="submit" class="btn btn-send" value="Zapisz">';
+                        }?>
                         <a href="sciekin.php" class="btn btn-error">Anuluj</a>
-                        <a href="form_update_sciekin.php?a=<?php echo $prev; ?>" class="btn btn-next">Poprzedni</a>
-                        <a href="form_update_sciekin.php?a=<?php echo $next; ?>" class="btn btn-next">Nastepny</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF'];?>?a=<?php echo $prev;?>" class="btn btn-next">Poprzedni</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF'];?>?a=<?php echo $next; ?>" class="btn btn-next">Nastepny</a>
                     </div>
                 </div>
             </form>

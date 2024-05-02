@@ -3,7 +3,6 @@
 // Include config file
 require_once "config.php";
 
-
 $sql = "SELECT * FROM v_sciekio ORDER BY creation_date DESC";
 $result = $link->query($sql);
 

@@ -13,16 +13,16 @@ require_once "config.php";
 
 echo var_dump($_POST);
 
-$chlorki = empty($_POST['Chlorki'])? NULL: htmlspecialchars($_POST['Chlorki']);
-$chrom = empty($_POST['Chrom'])? NULL: htmlspecialchars($_POST['Chrom']);
-$cynk = empty($_POST['Cynk'])? NULL: htmlspecialchars($_POST['Cynk']);
-$kadm = empty($_POST['Kadm'])? NULL: htmlspecialchars($_POST['Kadm']);
-$miedz = empty($_POST['Miedz'])? NULL: htmlspecialchars($_POST['Miedz']);
-$nikel = empty($_POST['Nikiel'])? NULL: htmlspecialchars($_POST['Nikiel']);
-$odczyn = empty($_POST['Odczyn'])? NULL: htmlspecialchars($_POST['Odczyn']);
-$olow = empty($_POST['Olow'])? NULL: htmlspecialchars($_POST['Olow']);
-$siarczany = empty($_POST['Siarczany'])? NULL: htmlspecialchars($_POST['Siarczany']);
-$komentarz = empty($_POST['Komentarz'])? NULL: htmlspecialchars($_POST['Komentarz']);
+$chlorki = empty($_POST['Chlorki'])? NULL: $_POST['Chlorki'];
+$chrom = empty($_POST['Chrom'])? NULL: $_POST['Chrom'];
+$cynk = empty($_POST['Cynk'])? NULL: $_POST['Cynk'];
+$kadm = empty($_POST['Kadm'])? NULL: $_POST['Kadm'];
+$miedz = empty($_POST['Miedz'])? NULL: $_POST['Miedz'];
+$nikel = empty($_POST['Nikiel'])? NULL: $_POST['Nikiel'];
+$odczyn = empty($_POST['Odczyn'])? NULL: $_POST['Odczyn'];
+$olow = empty($_POST['Olow'])? NULL: $_POST['Olow'];
+$siarczany = empty($_POST['Siarczany'])? NULL: $_POST['Siarczany'];
+$komentarz = empty($_POST['Komentarz'])? NULL: $_POST['Komentarz'];
 
 $id = $_POST['id'];
 

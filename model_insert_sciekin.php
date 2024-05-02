@@ -2,7 +2,6 @@
 // Initialize the session
 session_start();
 
-
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
@@ -14,32 +13,25 @@ if(!$_SERVER["REQUEST_METHOD"] == "POST"){
     header("location: login.php");
     exit;
 }
-
-echo var_dump($_POST) ;
+?>
+<pre>
+    <?php
+        print_r($_POST);
+    ?>
+</pre>
+<?php
 
 // Include config file
 require_once "config.php";
 
-//$username = $_SESSION["username"];
-$sql = "SELECT id FROM users WHERE username = ?";
-$stmt = $link->prepare($sql);
-$stmt->bind_param("s",$_SESSION["username"]);
-$stmt->execute();
-
-// Pobranie wyniku zapytania
-$result = $stmt->get_result();
-
-// Pobranie pojedynczego wiersza jako tablicy asocjacyjnej
-$row = $result->fetch_assoc();
-
-// Wydobycie wartości ID
-$id = $row['id'];
+$id = $_SESSION["id"];
 
 $sql = "INSERT INTO sciekin (chlorki, chrom, cynk, kadm, miedz, nikiel, odczyn, olow, siarczany, komentarz, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $link->prepare($sql);
 
 $stmt->bind_param("dddddddddsi", $chlorki, $chrom, $cynk, $kadm, $miedz, $nikel, $odczyn, $olow, $siarczany, $komentarz, $id);
+
 
 $chlorki = empty($_POST['Chlorki'])? NULL: $_POST['Chlorki'];
 $chrom = empty($_POST['Chrom'])? NULL: $_POST['Chrom'];
@@ -52,11 +44,11 @@ $olow = empty($_POST['Olow'])? NULL: $_POST['Olow'];
 $siarczany = empty($_POST['Siarczany'])? NULL: $_POST['Siarczany'];
 $komentarz = empty($_POST['Komentarz'])? NULL: $_POST['Komentarz'];
 
-$stmt->execute();
-
-echo "New records created successfully";
-
-$stmt->close();
-$link->close();
-
-header("location: sciekin.php");
+if(empty($chlorki) && empty($chrom) && empty($cynk) && empty($kadm) && empty($miedz) && empty($nikel) && empty($odczyn) && empty($olow) && empty($siarczany) ){
+    echo "uzupełnij co najmniej jedną wartość";
+}else{
+    $stmt->execute();
+    $stmt->close();
+    $link->close();
+    header("location: sciekin.php");
+}
