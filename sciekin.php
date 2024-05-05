@@ -22,17 +22,16 @@ $lastRowId = getLastRowIdSciekin($link);
 
 <body>
     <b> Witaj, <?php echo htmlspecialchars($_SESSION["username"]);?> </b>
-    <!-- <?php
-        echo var_dump($_SESSION);
-    ?> -->
+ 
     <header class="header-main">
         <section class="first-header-section"></section>
     
         <section class="second-header-section">
-            <ul>
-                <li><a href="sciekin.php" class="btn btn-warning">Ścieki nieoczyszczone</a></li>
-                <li><a href="sciekio.php" class="btn btn-warning">Ścieki oczyszczone</a></li>
-            </ul> 
+           
+            <a href="raport.php" class="btn btn-warning">Raporty</a>
+            <a href="sciekin.php" class="btn btn-warning">Ścieki nieoczyszczone</a>
+            <a href="sciekio.php" class="btn btn-warning">Ścieki oczyszczone</a>
+           
         </section>
     
         <section class="third-header-section">

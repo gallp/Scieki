@@ -62,10 +62,10 @@ $rowid = $_GET["a"];
         </section>
         
         <section class="second-header-section">
-            <ul>
-                <li><a href="sciekin.php" class="btn btn-warning">Ścieki nieoczyszczone</a></li>
-                <li><a href="sciekio.php" class="btn btn-warning">Ścieki oczyszczone</a></li>
-            </ul> 
+  
+            <a href="sciekin.php" class="btn btn-warning">Ścieki nieoczyszczone</a>
+            <a href="sciekio.php" class="btn btn-warning">Ścieki oczyszczone</a>
+
         </section>
         
         <section class="third-header-section">
