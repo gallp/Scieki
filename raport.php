@@ -10,6 +10,15 @@ echo "<br>";
 var_dump($_SESSION);
 echo "<br>";
 
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    
+    if(isset($_SESSION["data-sciekin"])){
+        unset($_SESSION["data-sciekin"]);
+    }
+    if(isset($_SESSION["rad-sciekin"])){
+        unset($_SESSION["rad-sciekin"]);
+    }
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "confirm conditional 1<br>";
@@ -176,8 +185,8 @@ echo "<br>";
                     <div class="input-box">
                         <?php
                         if(!(key_exists("data-sciekin",$_SESSION))){?>
-
-                            <input type="date" name="data-sciekin" value="<?php date("Y-m-d h:i:sa")?>">
+                            <p>confirm conditional 5</p>
+                            <input type="date" name="data-sciekin" value="2024-01-01">
                         <?php
                         }else{?>
                             <input type="date" name="data-sciekin" value="<?php echo $_SESSION['data-sciekin']?>">

@@ -278,7 +278,7 @@ border-style: none;
     display: inline-block;
     /* background-color: rgb(169, 206, 224); */
     height: 1.5rem;
-    background-color: #bee9ff;
+    /* background-color: #bee9ff; */
 }
 
 input[type=radio] {

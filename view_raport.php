@@ -39,12 +39,11 @@ $sciekio = $result2->fetch_assoc();
 unset($_SESSION["rad-sciekin"]);
 unset($_SESSION["rad-sciekio"]);
 unset($_SESSION["data-sciekin"]);
-echo "<br>";
-var_dump($_SESSION);
-echo "<br>";
+// echo "<br>";
+// var_dump($_SESSION);
+// echo "<br>";
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,10 +79,9 @@ echo "<br>";
             <?php genRaport($sciekin, $sciekio);?>
         
             <div class='input-box-group'>            
-            <button type="submit" class="btn btn-next">Pobierz</button>
-        </div>
-                </div>         
-            </form>
+                <button type="submit" class="btn btn-next">Pobierz</button>
+            </div>
+
         </section>
     </section>        
 </body>
