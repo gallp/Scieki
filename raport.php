@@ -4,11 +4,11 @@ session_start();
 
 require_once "config.php";
 
-echo $_SERVER["REQUEST_METHOD"];echo "<br>";
-var_dump($_POST);
-echo "<br>";
-var_dump($_SESSION);
-echo "<br>";
+// echo $_SERVER["REQUEST_METHOD"];echo "<br>";
+// var_dump($_POST);
+// echo "<br>";
+// var_dump($_SESSION);
+// echo "<br>";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
@@ -21,34 +21,34 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        echo "confirm conditional 1<br>";
+        // echo "confirm conditional 1<br>";
 
     if(array_key_exists("data-sciekin", $_POST)){
-        echo "confirm conditional 2<br>";
+        // echo "confirm conditional 2<br>";
         
         $_SESSION["data-sciekin"] = $_POST["data-sciekin"];
         $data_sciekin = $_POST["data-sciekin"];
         $tmp = strtotime($data_sciekin);
        
-        echo "zmienna data_sciekin " . $tmp . "<br>";
+        // echo "zmienna data_sciekin " . $tmp . "<br>";
 
         $sql = "SELECT * FROM v_sciekin WHERE creation_date >= FROM_UNIXTIME($tmp) ORDER BY creation_date DESC";
         $result = $link->query($sql);
         
         $row = $result->fetch_assoc();
 
-        print_r($row);
+        // print_r($row);
         
     }
 
     if(array_key_exists("rad_sciekin", $_POST)){
-        echo "confirm conditional 3<br>";
+        // echo "confirm conditional 3<br>";
         
         $_SESSION["rad-sciekin"] = $_POST["rad_sciekin"];
         $rad_sciekin = $_POST["rad_sciekin"];
         $tmp = strtotime($rad_sciekin);
         
-        echo "zmienna rad_sciekin " . $rad_sciekin . "<br>";
+        // echo "zmienna rad_sciekin " . $rad_sciekin . "<br>";
 
 
         $sql2 = "SELECT * FROM v_sciekio WHERE creation_date >= FROM_UNIXTIME($tmp) ORDER BY creation_date DESC";
@@ -67,15 +67,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
 // echo $_SERVER["PHP_SELF"];
 // echo "<br>";
 
-var_dump($_SESSION);
-echo "<br>";
-
-
-
+// var_dump($_SESSION);
+// echo "<br>";
 ?>
 
 <!DOCTYPE html>
@@ -87,22 +83,7 @@ echo "<br>";
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <b> Witaj, <?php echo htmlspecialchars($_SESSION["username"]);?> </b>
-    <header class="header-main">
-        <section class="first-header-section">
-        </section>
-        
-        <section class="second-header-section">
-            <a href="raport.php" class="btn btn-warning">Raporty</a>
-            <a href="sciekin.php" class="btn btn-warning">Ścieki nieoczyszczone</a>
-            <a href="sciekio.php" class="btn btn-warning">Ścieki oczyszczone</a>  
-        </section>
-        
-        <section class="third-header-section">
-            <a href="reset-password.php" class="btn btn-warning">Zmień hasło</a>
-            <a href="logout.php" class="btn btn-error">Wyloguj</a>
-        </section>
-    </header>
+    <?php require_once "navbar.php"?>
 
     <section class="body-middle">
         
@@ -111,7 +92,6 @@ echo "<br>";
             <header>Generator raportów</header>
             
             <?php            
-            
             if(key_exists("data-sciekin",$_SESSION) && key_exists("rad-sciekin",$_SESSION)){ ?>
 
                     <form action="<?php $_SERVER["PHP_SELF"]?>" method="POST" id="f222">
@@ -141,10 +121,7 @@ echo "<br>";
             <?php
             }?>
 
-
-<?php
-            
-
+            <?php
             if(key_exists("data-sciekin",$_SESSION) && !(key_exists("rad-sciekin",$_SESSION))){ ?>
 
                 <form action="<?php $_SERVER["PHP_SELF"]?>" method="POST" id="f222">
@@ -175,18 +152,20 @@ echo "<br>";
             <?php
             }?>
 
-
             <?php
-
             if(!(key_exists("data-sciekin",$_SESSION))){?>
 
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST" id="f111">
 
                     <div class="input-box">
                         <?php
-                        if(!(key_exists("data-sciekin",$_SESSION))){?>
+                        if(!(key_exists("data-sciekin",$_SESSION))){
+                            
+                            
+                            $tmp =(string)date("Y-m-d");
+                            ?>
                             <p>confirm conditional 5</p>
-                            <input type="date" name="data-sciekin" value="2024-01-01">
+                            <input type="date" name="data-sciekin" value="<?php echo $tmp?>">
                         <?php
                         }else{?>
                             <input type="date" name="data-sciekin" value="<?php echo $_SESSION['data-sciekin']?>">

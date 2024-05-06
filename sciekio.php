@@ -7,6 +7,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+require_once "config.php";
+require_once "functions.php";
+$lastRowId = getLastRowIdSciekin($link);
 ?>
  
 <!DOCTYPE html>
@@ -17,36 +20,21 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<b> Witaj, <?php echo htmlspecialchars($_SESSION["username"]);?> </b>
-<header>
-    <section class="first-header-section">
-      
+
+    <?php require_once "navbar.php"?>
+
+<section class="body-middle">
+    <section class="table-container">
+        <header>Ścieki oczyszczone</header>
+        <div class="input-box-group">  
+                <div class="input-group" style="margin-bottom: 20px;">         
+                    <a href="form_insert_sciekio.php" class="btn btn-send">Nowy wpis</a>
+                    <a href="browse_sciekio.php?a=<?php echo $lastRowId;?>" class="btn btn-next">Przeglądaj</a>
+                </div>
+        </div>
+        <div>
+            <?php include 'display_sciekio.php';?>
+        </div>
     </section>
-    
-    <section class="second-header-section">
-        <ul>
-            <li><a href="sciekin.php" class="btn btn-warning">Ścieki nieoczyszczone</a></li>
-            <li><a href="sciekio.php" class="btn btn-warning">Ścieki oczyszczone</a></li>
-        </ul> 
-    </section>
-    
-    <section class="third-header-section">
-        <a href="reset-password.php" class="btn btn-warning">Zmień hasło</a>
-        <a href="logout.php" class="btn btn-error">Wyloguj</a>
-    </section>
-</header>
-
-<br>
-
-<b>Ścieki oczyszczone</b> 
-
-<br><br><br>      
-<a href="form_insert_sciekio.php" class="btn btn-send">Nowy wpis</a>
-<br><br><br>
-    
-<div>
-    <?php include 'display_sciekio.php';?>
-</div>
-
 </body>
 </html>
