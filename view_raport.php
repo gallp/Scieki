@@ -36,9 +36,9 @@ $sciekio = $result2->fetch_assoc();
 // var_dump($sciekio);
 // echo "<br>";
 
-unset($_SESSION["rad-sciekin"]);
-unset($_SESSION["rad-sciekio"]);
-unset($_SESSION["data-sciekin"]);
+// unset($_SESSION["rad-sciekin"]);
+// unset($_SESSION["rad-sciekio"]);
+// unset($_SESSION["data-sciekin"]);
 // echo "<br>";
 // var_dump($_SESSION);
 // echo "<br>";

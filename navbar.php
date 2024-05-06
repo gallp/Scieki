@@ -12,7 +12,7 @@
      </section>
  
      <section class="third-header-section">
-         <a href="reset-password.php" class="btn btn-warning">Zmień hasło</a>
+         <a href="under_construction.php" class="btn btn-warning">Zmień hasło</a>
          <a href="logout.php" class="btn btn-error">Wyloguj</a>
      </section>
  </header>

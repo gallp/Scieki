@@ -9,7 +9,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 require_once "config.php";
 require_once "functions.php";
-$lastRowId = getLastRowIdSciekin($link);
+$lastRowId = getLastRowIdSciekio($link);
 ?>
  
 <!DOCTYPE html>

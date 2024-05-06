@@ -10,17 +10,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 // Include config file
 require_once "config.php";
-//error_reporting(E_ERROR | E_PARSE);
-    $rowid = $_GET["a"];
+require_once "functions.php";
 
-    $sql = "SELECT * FROM sciekin WHERE id = ?";
+$rowid = $_GET["a"];
+
+    $sql = "SELECT * FROM sciekio WHERE id = ?";
     $stmt = $link->prepare($sql);
     $stmt->bind_param("i",$rowid);
     $stmt->execute();
     $result = $stmt->get_result()->fetch_assoc();
     
-
-    $sqlprev = "SELECT * FROM sciekin WHERE id < ? ORDER BY creation_date DESC LIMIT 1";
+    $sqlprev = "SELECT * FROM sciekio WHERE id < ? ORDER BY creation_date DESC LIMIT 1";
     $stmtprev = $link->prepare($sqlprev);
     $stmtprev->bind_param("i",$rowid);
     $stmtprev->execute();
@@ -32,13 +32,12 @@ require_once "config.php";
         $prev = $resultprev["id"];
     }
 
-    $sqlnext = "SELECT * FROM sciekin WHERE id > ? ORDER BY creation_date ASC LIMIT 1";
+    $sqlnext = "SELECT * FROM sciekio WHERE id > ? ORDER BY creation_date ASC LIMIT 1";
     $stmtnext = $link->prepare($sqlnext);
     $stmtnext->bind_param("i",$rowid);
     $stmtnext->execute();
     $resultnext = $stmtnext->get_result()->fetch_assoc();
                     
-    
     if(is_null($resultnext)){
         $next = $rowid;
     }else{
@@ -51,16 +50,16 @@ require_once "config.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Scieki nieoczyszczone</title>
+    <title>Scieki oczyszczone</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <?php require_once "navbar.php"?>   
-        
+
+    <?php require_once "navbar.php"?>
+ 
     <section class="body-middle">
         <section class="container">    
-            <header>Scieki nieoczyszczone\Edycja rekord <?php echo $rowid ?> <br> z dn. <?php echo $result["creation_date"]?></header>
+            <header>Scieki oczyszczone\Edycja rekord <?php echo $rowid ?> <br> z dn. <?php echo $result["creation_date"]?></header>
             <form class="form-basic" action="model_update_sciekin.php" method="POST">
                 <div class="input-box-group">
                     <div class="input-box">
@@ -115,11 +114,14 @@ require_once "config.php";
                     </div>
                 </div>
                 <div class="input-box-group">  
-                    <div class="input-group">         
-                        <input type="submit" class="btn btn-send" value="Zapisz">
-                        <a href="sciekin.php" class="btn btn-error">Anuluj</a>
-                        <a href="form_update_sciekin.php?a=<?php echo $prev; ?>" class="btn btn-next">Poprzedni</a>
-                        <a href="form_update_sciekin.php?a=<?php echo $next; ?>" class="btn btn-next">Nastepny</a>
+                    <div class="input-group">
+                        <?php
+                        if($_SESSION["type"]=="admin"){
+                            echo '<input type="submit" class="btn btn-send" value="Zapisz">';
+                        }?>
+                        <a href="sciekio.php" class="btn btn-error">Anuluj</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF'];?>?a=<?php echo $prev;?>" class="btn btn-next">Poprzedni</a>
+                        <a href="<?php echo $_SERVER['PHP_SELF'];?>?a=<?php echo $next; ?>" class="btn btn-next">Nastepny</a>
                     </div>
                 </div>
             </form>

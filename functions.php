@@ -30,6 +30,19 @@ function getLastRowIdSciekin($link){
 return $id;
 }
 
+function getLastRowIdSciekio($link){
+
+    $sql = "SELECT * FROM sciekio ORDER BY id DESC LIMIT 1";
+    $stmt = $link->prepare($sql);
+    $stmt->execute();
+    // Pobranie wyniku zapytania
+    $result = $stmt->get_result();
+    // // Pobranie pojedynczego wiersza jako tablicy asocjacyjnej
+    $row = $result->fetch_assoc();
+     // // Wydobycie wartości ID
+    $id = $row['id'];
+return $id;
+}
 
 function genRaport($sciekin, $sciekio){
     
@@ -79,7 +92,5 @@ function genRaport($sciekin, $sciekio){
         </div>
         <?php  
             }
-
         }
-    
 }

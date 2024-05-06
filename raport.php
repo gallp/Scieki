@@ -162,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         if(!(key_exists("data-sciekin",$_SESSION))){
                             
                             
-                            $tmp =(string)date("Y-m-d");
+                            $tmp =(string)date("Y-m-d",strtotime('-7 days'));
                             ?>
                             <p>confirm conditional 5</p>
                             <input type="date" name="data-sciekin" value="<?php echo $tmp?>">
