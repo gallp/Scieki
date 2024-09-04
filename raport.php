@@ -4,11 +4,11 @@ session_start();
 
 require_once "config.php";
 
-// echo $_SERVER["REQUEST_METHOD"];echo "<br>";
-// var_dump($_POST);
-// echo "<br>";
-// var_dump($_SESSION);
-// echo "<br>";
+echo $_SERVER["REQUEST_METHOD"];echo "<br>";
+var_dump($_POST);
+echo "<br>";
+var_dump($_SESSION);
+echo "<br>";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     

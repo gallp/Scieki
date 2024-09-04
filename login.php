@@ -20,14 +20,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+        $username_err = "Wpisz nazwę użytkownika";
     } else{
         $username = trim($_POST["username"]);
     }
     
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
+        $password_err = "Wpisz hasło.";
     } else{
         $password = trim($_POST["password"]);
     }
@@ -104,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <header>
                 Logowanie
             </header>
-            <p>Please fill in your credentials to login.</p>
+            <p>Aby się zalogować podaj nazwę użytkownika i hasło</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     
                     <div class="input-box">

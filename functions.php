@@ -49,15 +49,15 @@ function genRaport($sciekin, $sciekio){
     $przekroczenia =array(        
     "id" => NULL,
     "creation_date" => NULL, 
-    "chlorki"   =>2.21, 
-    "chrom"     =>0.234,
-    "cynk"      =>23.36, 
-    "kadm"      =>0.34, 
-    "miedz"     =>345.34,
-    "nikiel"    =>35.12,
-    "odczyn"    =>6,
-    "olow"      =>9,
-    "siarczany" =>11,
+    "chlorki"   =>1000, 
+    "chrom"     =>0.5,
+    "cynk"      =>2, 
+    "kadm"      =>0.05, 
+    "miedz"     =>0.5,
+    "nikiel"    =>0.5,
+    "odczyn"    =>9,
+    "olow"      =>0.1,
+    "siarczany" =>500,
     "username" => NULL);
     ?>
 
@@ -79,7 +79,11 @@ function genRaport($sciekin, $sciekio){
                 <th rowspan="2" style="width: 100px; background-color: #f2f2f2; color: black;"><?php echo $key?></th>
                 <th>Nieoczyszczone</th>
                 <th>Oczyszczone</th>
-                <th>Norma</th>
+                <th>Norma 
+                    <?php 
+                        if($key == "odczyn"){
+                            echo "pH";
+                        }else echo "mg/L";?></th>
                 <th>% Normy</th>
             </tr>
             <tr>
