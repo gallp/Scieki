@@ -12,7 +12,10 @@
      </section>
  
      <section class="third-header-section">
-         <a href="under_construction.php" class="btn btn-warning">Zmień hasło</a>
+         <a href="form_changepasswd.php" class="btn btn-warning">Zmień hasło</a>
+         <?php if($_SESSION["username"]=="admin"){
+            echo "<a href='under_construction.php' class='btn btn-warning'>Admin</a>";
+         }?>
          <a href="logout.php" class="btn btn-error">Wyloguj</a>
      </section>
  </header>

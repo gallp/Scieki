@@ -51,6 +51,7 @@ $sciekio = $result2->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link  media="print" rel="stylesheet" href="print.css" />
 </head>
 <body>
     <b> Witaj, <?php echo htmlspecialchars($_SESSION["username"]);?> </b>
@@ -79,10 +80,17 @@ $sciekio = $result2->fetch_assoc();
             <?php genRaport($sciekin, $sciekio);?>
         
             <div class='input-box-group'>            
-                <button type="submit" class="btn btn-next">Pobierz</button>
+                <button type="submit" class="btn btn-next" onclick="window.print()">Pobierz</button>
             </div>
 
         </section>
+
+        <script>
+            kontener = document.getElementsByClassName('container')[0];
+            diw = document.evaluate("//th[text()='odczyn']", kontener, null,
+                XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.closest('div');
+                kontener.lastElementChild.before( diw );
+</script> 
     </section>        
 </body>
 </html>

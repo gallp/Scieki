@@ -62,8 +62,8 @@ function genRaport($sciekin, $sciekio){
     ?>
 
     <div>
-        <p>Odczyt scieków nieoczyszczonych z dn. <?php echo $sciekin["creation_date"]?> <br> wykonał: <?php echo $sciekin["username"] ?> </p>
-        <p>Odczyt scieków oczyszczonych z dn. <?php echo $sciekio["creation_date"]?> <br> wykonał: <?php echo $sciekio["username"]?> </p>
+        <p>Odczyt scieków nieoczyszczonych z dn. <?php echo $sciekin["creation_date"]?> <br> wykonał: <?php echo $sciekin["username"] ?></p>
+        <p>Odczyt scieków oczyszczonych z dn. <?php echo $sciekio["creation_date"]?> <br> wykonał: <?php echo $sciekio["username"]?></p>
     </div>
     
     <?php   
@@ -72,7 +72,7 @@ function genRaport($sciekin, $sciekio){
         $przekroczenie = $przekroczenia[$key];
 
         
-            if($key != "id" && $key != "creation_date" && $key != "username" && $value2!=NULL){?>
+            if($key!="id" && $key!="creation_date" && $key !="username" && $value2!=NULL){?>
         <div>
         <table style="margin-top: 10px; width: 100%; border: 1px solid black;">
             <tr>

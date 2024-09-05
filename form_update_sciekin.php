@@ -65,43 +65,43 @@ require_once "config.php";
                 <div class="input-box-group">
                     <div class="input-box">
                         <label for="Chlorki">Chlorki:</label>
-                        <input type="text" id="Chlorki" name="Chlorki" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["chlorki"]?>'>
+                        <input type="text" id="Chlorki" name="Chlorki" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["chlorki"]?>'>
                     </div>
                     <div class="input-box">
                         <label for="Chrom">Chrom:</label>
-                        <input type="text" id="Chrom" name="Chrom" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["chrom"]?>'>
+                        <input type="text" id="Chrom" name="Chrom" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["chrom"]?>'>
                     </div>
                     <div class="input-box">
                         <label for="Cynk">Cynk:</label>
-                        <input type="text" id="Cynk" name="Cynk" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["cynk"]?>'>
+                        <input type="text" id="Cynk" name="Cynk" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["cynk"]?>'>
                     </div>
                 </div>
                 <div class="input-box-group">
                     <div class="input-box">
                         <label for="Kadm">Kadm:</label>
-                        <input type="text" id="Kadm" name="Kadm" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["kadm"]?>'>
+                        <input type="text" id="Kadm" name="Kadm" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["kadm"]?>'>
                     </div>
                     <div class="input-box">
                         <label for="Miedz">Miedź:</label>
-                        <input type="text" id="Miedz" name="Miedz" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["miedz"]?>'>
+                        <input type="text" id="Miedz" name="Miedz" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["miedz"]?>'>
                     </div>
                     <div class="input-box">
                         <label for="Nikiel">Nikiel:</label>
-                        <input type="text" id="Nikiel" name="Nikiel" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["nikiel"]?>'> 
+                        <input type="text" id="Nikiel" name="Nikiel" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["nikiel"]?>'> 
                     </div>
                 </div>
                 <div class="input-box-group">
                     <div class="input-box">
                         <label for="Odczyn">Odczyn:</label>
-                        <input type="text" id="Odczyn" name="Odczyn" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["odczyn"]?>'>
+                        <input type="text" id="Odczyn" name="Odczyn" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["odczyn"]?>'>
                     </div>
                     <div class="input-box">
                         <label for="Olow">Ołów:</label>
-                        <input type="text" id="Olow" name="Olow" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["olow"]?>'>
+                        <input type="text" id="Olow" name="Olow" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["olow"]?>'>
                     </div>
                     <div class="input-box">
                         <label for="Siarczany">Siarczany:</label>
-                        <input type="text" id="Siarczany" name="Siarczany" pattern="(\d{0,3})(\.[\d]{1,3})?" value='<?php echo $result["siarczany"]?>'><br>
+                        <input type="text" id="Siarczany" name="Siarczany" pattern="(\d{0,4})(\.[\d]{1,3})?" value='<?php echo $result["siarczany"]?>'><br>
                     </div>
                 </div>
                 <div class="input-box-group">
